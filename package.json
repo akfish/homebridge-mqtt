@@ -1,7 +1,7 @@
 {
   "name": "homebridge-mqtt",
   "version": "0.5.1",
-  "description": "MQTT Plugin for Homebridge",
+  "description": "MQTT Plugin for Homebridge (custom fork)",
   "license": "ISC",
   "author": {
     "name": "flurin"
@@ -16,17 +16,16 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/cflurin/homebridge-mqtt.git"
-  },
-  "bugs": {
-    "url": "http://github.com/cflurin/homebridge-mqtt/issues"
+    "url": "https://github.com/akfish/homebridge-mqtt.git"
   },
   "engines": {
     "node": ">=4.3.2",
     "homebridge": ">=0.4.16"
   },
   "dependencies": {
-    "request": ">=2.79.0",
-    "mqtt": ">=2.4.0"
+    "fakegato-history": "^0.5.3",
+    "moment": "^2.22.2",
+    "mqtt": ">=2.4.0",
+    "request": ">=2.79.0"
   }
 }

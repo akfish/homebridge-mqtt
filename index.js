@@ -11,6 +11,7 @@ var plugin_name = "homebridge-" + platform_name;
 var storagePath;
 var plugin_version;
 var multiple = false;
+var FakeGatoHistoryService;
 
 module.exports = function(homebridge) {
   console.log("homebridge API version: " + homebridge.version);
@@ -21,6 +22,8 @@ module.exports = function(homebridge) {
   Characteristic = homebridge.hap.Characteristic;
   UUIDGen = homebridge.hap.uuid; // Universally Unique IDentifier
   storagePath = homebridge.user.storagePath();
+
+  FakeGatoHistoryService = require('fakegato-history')(homebridge);
     
   homebridge.registerPlatform(plugin_name, platform_name, PluginPlatform, true);
 }
@@ -57,7 +60,8 @@ function PluginPlatform(log, config, api) {
     "HapAccessory": HapAccessory,
     "Characteristic": Characteristic,
     "Service": Service,
-    "UUIDGen": UUIDGen
+    "UUIDGen": UUIDGen,
+    "HistoryService": FakeGatoHistoryService
   }
   
   this.controller = new Controller(c_parameters);
