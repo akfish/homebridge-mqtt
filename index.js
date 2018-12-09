@@ -70,6 +70,7 @@ function PluginPlatform(log, config, api) {
 
     api.on('didFinishLaunching', function() {
       this.log("Number of cached Accessories: %s", cachedAccessories);
+      this.log("AKFish's Fork");
       
       this.controller.start();      
     }.bind(this));
